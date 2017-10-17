@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <style>
+
+    table {
+          border-collapse: separate;
+    }
+
+    .head {
+      font-family: "Arial Italic",sans-serif;
+      color: #ffffff;
+      border-left: solid #ffffff;
+      display: block;
+      font-size: 12px;
+      height: 17px;
+      border-left: solid white 1px;
+      line-height: 10px;
+      vertical-align: top;
+      padding-left: 1px;
+    }
+
+    .arriving {
+      background-image: url(bla.gif);
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+
+    .entry {
+      color: #f19a34;
+      font-family: "DotMatrix",sans-serif;
+      background-color:#111;
+      font-size:14px;
+      display: table-row;
+      vertical-align: inherit;
+    }
+    .time {
+      color: #ffffff;
+      font-family: "DejaVu Sans Mono";
+      font-size:12px;
+    }
+
+    .station {
+      color: #ffffff;
+      font-family: "DejaVu Sans Mono";
+      font-size:20px;
+      font-weight: bold;
+    }
+    </style>
+
+  </head>
+    <body style="background-color:#000000" >
+      <blink>AVV Timetable </blink>
+        <table id=main class="monitor" style="width:100%">
+            <tr>
+              <td>
+                <table id=3>
+                  <tr>
+                      <td colspan="3" id=3_name class="station"></td>
+                      <td colspan="1" id=3_time class="time"></td>
+                  </tr>
+                  <tr id="head">
+                      <td><span class="head">Line</span></td>
+                      <td><span class="head">Destination</span></td>
+                      <td><span class="head">Time</span></td>
+                      <td><span class="head">Reach</span></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table id=2>
+                  <tr>
+                    <td colspan="3" id=2_name class="station"></td>
+                    <td colspan="1" id=2_time class="time"></td>
+                  </tr>
+                  <tr id="head">
+                      <td><span class="head">Line</span></td>
+                      <td><span class="head">Destination</span></td>
+                      <td><span class="head">Time</span></td>
+                      <td><span class="head">Reach</span></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+        </table>
+       </body>
+       <script type="text/javascript">
+       BackEnd.start_table();
+       BackEnd.start_request();
+       (function() {
+         var blinks = document.getElementsByTagName('blink');
+         var visibility = 'hidden';
+         window.setInterval(function() {
+           for (var i = blinks.length - 1; i >= 0; i--) {
+             blinks[i].style.visibility = visibility;
+           }
+           visibility = (visibility === 'visible') ? 'hidden' : 'visible';
+         }, 500);
+       })();
+       </script>
+       <script type="text/javascript">
+       (function() {
+         window.setInterval(function() {
+           BackEnd.start_request();
+         }, 10000);
+       })();
+       </script>
+
+</html>
