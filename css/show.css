@@ -1,0 +1,38 @@
+
+    table {
+          border-collapse: separate;
+    }
+
+    .head {
+      font-family: "Arial Italic",sans-serif;
+      color: #ffffff;
+      border-left: solid #ffffff;
+      display: block;
+      font-size: 12px;
+      height: 17px;
+      border-left: solid white 1px;
+      line-height: 10px;
+      vertical-align: top;
+      padding-left: 1px;
+    }
+
+    .entry {
+      color: #f19a34;
+      font-family: "DotMatrix",sans-serif;
+      background-color:#111;
+      font-size:14px;
+      display: table-row;
+      vertical-align: inherit;
+    }
+    .time {
+      color: #ffffff;
+      font-family: "DejaVu Sans Mono";
+      font-size:12px;
+    }
+
+    .station {
+      color: #ffffff;
+      font-family: "DejaVu Sans Mono";
+      font-size:20px;
+      font-weight: bold;
+    }
