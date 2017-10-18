@@ -2,13 +2,13 @@
 
 General:
 -------
-This small python application displays EFA content. Its by default configured to capture stations of the "Augsburger Verkehrs Verbung".
+This small and simple python application displays EFA content. Its by default configured to capture stations of the "Augsburger Verkehrs Verbund".
 
 Configure:
 ---------
-To edit station codes and walk/drive times to station edit constants in back_end.py.
-Install font from ./res folder.
-To display content from other providers just change the HTTP-requests.
+To edit station,line codes and walk/drive times to station edit constants in back_end.py.
+Install font from ./res/font folder.
+To display content from other providers just modify the HTTP-requests.
 
 Run:
 ---
