@@ -2,7 +2,12 @@ from xml.etree import ElementTree as ET
 import urllib2
 import htmlPy
 import time
+import signal
 from thread import start_new_thread
+
+def handler(signum, frame):
+    print "Connection ERROR"
+    raise Exception("timeout")
 
 class BackEnd(htmlPy.Object):
 
@@ -24,18 +29,23 @@ class BackEnd(htmlPy.Object):
     def __init__(self, app):
         super(BackEnd, self).__init__()
         self.app = app
+        signal.signal(signal.SIGALRM,handler)
 
     def feed_data(self,station,table,bike_time,run_time,line_index):
         #First Request
-        response = urllib2.urlopen('https://efa.avv-augsburg.de/avv2/XML_DM_REQUEST?sessionID=0&type_dm=any&name_dm='+station+'&itdDateTimeArr=dep')
-        xml = response.read()
-        tree = ET.fromstring(xml)
-        sid = tree.get('sessionID') #sessionID to get departure Data
+        signal.alarm(20)
+        try:
+            response = urllib2.urlopen('https://efa.avv-augsburg.de/avv2/XML_DM_REQUEST?sessionID=0&type_dm=any&name_dm='+station+'&itdDateTimeArr=dep')
+            xml = response.read()
+            tree = ET.fromstring(xml)
+            sid = tree.get('sessionID') #sessionID to get departure Data
 
-        #Secound Request
-        response2 = urllib2.urlopen('https://efa.avv-augsburg.de/avv2/XML_DM_REQUEST?sessionID='+sid+'&requestID=1&dmLineSelection='+line_index)
-        xml2 = response2.read()
-        departures_tree = ET.fromstring(xml2)
+            #Secound Request
+            response2 = urllib2.urlopen('https://efa.avv-augsburg.de/avv2/XML_DM_REQUEST?sessionID='+sid+'&requestID=1&dmLineSelection='+line_index)
+            xml2 = response2.read()
+            departures_tree = ET.fromstring(xml2)
+        except Exception, exc:
+            print exc
         hours = departures_tree.find('itdDepartureMonitorRequest').find('itdDateTime').find('itdTime').get('hour')
         if int(hours) < 10:
             hours = '0'+hours
