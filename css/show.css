@@ -27,13 +27,11 @@ body {
 }
 .time {
     color: #ffffff;
-    font-family: 'DejaVu Sans Mono';
     font-size: 25px;
 }
 
 .station {
     color: #ffffff;
-    font-family: 'DejaVu Sans Mono';
     font-size: 30px;
     font-weight: bold;
 }
