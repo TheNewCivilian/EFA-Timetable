@@ -1,80 +1,44 @@
 <html>
   <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet"  href="{{ '../css/show.css'|staticfile}}" >
     <style>
     .arriving {
-      background-image: url({{ '../res/bla.gif'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
+        background-image: url({{'../res/bla.gif'|staticfile}});
+        background-repeat: no-repeat;
+        background-position: left;
     }
-
-    .reach_good_trans {
-      background-image: url({{ '../res/run.gif'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-
-    .reach_good {
-      background-image: url({{ '../res/run.png'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-
-    .reach_medium_trans {
-      background-image: url({{ '../res/bike.gif'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-
-    .reach_medium {
-      background-image: url({{ '../res/bike.png'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-
-    .reach_bad {
-      background-image: url({{ '../res/cancel.png'|staticfile }});
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-
     </style>
-
-    <link rel="stylesheet"  href="{{ '../css/show.css'|staticfile}}" >
-
   </head>
-    <body style="background-color:#000000" >
-        <table id=main class="monitor" style="width:100%">
-            <tr>
-              <td>
-                <table id=3>
-                  <tr>
-                      <td colspan="3" id=3_name class="station"></td>
-                      <td colspan="1" id=3_time class="time"></td>
-                  </tr>
-                  <tr id="head">
-                      <td><span class="head">Line</span></td>
-                      <td><span class="head">Destination</span></td>
-                      <td><span class="head">Time</span></td>
-                      <td><span class="head">Reach</span></td>
-                  </tr>
-                </table>
-              </td>
-              <td>
-                <table id=2>
-                  <tr>
-                    <td colspan="3" id=2_name class="station"></td>
-                    <td colspan="1" id=2_time class="time"></td>
-                  </tr>
-                  <tr id="head">
-                      <td><span class="head">Line</span></td>
-                      <td><span class="head">Destination</span></td>
-                      <td><span class="head">Time</span></td>
-                      <td><span class="head">Reach</span></td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+    <body>
+      <div class="depaturemonitor">
+        <table id=3>
+          <tr>
+              <td colspan="3" id=3_name class="station"></td>
+              <td colspan="1" id=3_time class="time"></td>
+          </tr>
+          <tr id="head">
+              <td><span class="head">Line</span></td>
+              <td width="300"><span class="head">Destination</span></td>
+              <td width="100"><span class="head">Time</span></td>
+              <td><span class="head">Reach</span></td>
+          </tr>
         </table>
+      </div>
+      <div class="depaturemonitor">
+          <table id=2>
+            <tr>
+              <td colspan="3" id=2_name class="station"></td>
+              <td colspan="1" id=2_time class="time"></td>
+            </tr>
+            <tr id="head">
+                <td><span class="head">Line</span></td>
+                <td width="300"><span class="head">Destination</span></td>
+                <td width="100"><span class="head">Time</span></td>
+                <td><span class="head">Reach</span></td>
+            </tr>
+          </table>
+        </div>
        </body>
        <script type="text/javascript">
        BackEnd.start_table();

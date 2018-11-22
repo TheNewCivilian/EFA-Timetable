@@ -80,20 +80,19 @@ class BackEnd(htmlPy.Object):
             self.app.evaluate_javascript("cell2 = document.getElementById('"+str(count)+"_"+table+"_dest');cell2.innerHTML = '"+destination+"';")
 
             if int(abfahrt) < bike_time:
-                reach_class = "reach_bad"
+                reach_class = '<i class="fas fa-times" style="color:#c3423f"></i>'
             else:
                 if int(abfahrt) == bike_time:
-                    reach_class = "reach_medium_trans"
+                    reach_class = '<i class="fas fa-bicycle" style="color:#b77128"></i>'
                 else:
                     if int(abfahrt) < run_time:
-                        reach_class = "reach_medium"
+                        reach_class = '<i class="fas fa-bicycle" style="color:#b78e28"></i>'
                     else:
-                        if int(abfahrt) == run_time:
-                            reach_class = "reach_good_trans"
+                        if int(abfahrt) <= run_time & int(abfahrt)+2 >= run_time:
+                            reach_class = '<i class="fas fa-running" style="color:#b7b928"></i>'
                         else:
-                            reach_class = "reach_good"
-
-            self.app.evaluate_javascript("cell4 = document.getElementById('"+str(count)+"_"+table+"_reach');cell4.className = '"+reach_class+"';")
+                            reach_class = '<i class="fas fa-male" style="color:#d2ff28"></i>'
+            self.app.evaluate_javascript("cell4 = document.getElementById('"+str(count)+"_"+table+"_reach');cell4.innerHTML = '"+reach_class+"';")
         return
 
 
