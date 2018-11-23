@@ -1,3 +1,4 @@
+
 from xml.etree import ElementTree as ET
 import urllib2
 import htmlPy
@@ -15,14 +16,14 @@ class BackEnd(htmlPy.Object):
     #STATION_1_BIKE = 4 #minimum time to drive to station by bike
     #STATION_1_RUN = 9 #minimum time to walk to station
 
-    STATION_1 = '2000170'
-    STATION_1_BIKE = 3
-    STATION_1_RUN = 5
-    LINE_1_INDEX = '4:0' #4 for tram-line and 0 for direction
+    STATION_1 = '2000101'
+    STATION_1_BIKE = 4
+    STATION_1_RUN = 9
+    LINE_1_INDEX = '4:x' #4 for tram-line and 0 for direction
 
-    STATION_2 = '2000127'
-    STATION_2_BIKE = 4
-    STATION_2_RUN = 9
+    STATION_2 = '2000664'
+    STATION_2_BIKE = 1
+    STATION_2_RUN = 2
     LINE_2_INDEX = '4:x' #x for all directions
 
 
@@ -53,9 +54,9 @@ class BackEnd(htmlPy.Object):
         if int(minutes) < 10:
             minutes = '0'+minutes
         time = hours+'<blink>'+':'+'</blink>'+minutes
-        station_name = departures_tree.find('itdDepartureMonitorRequest').find('itdOdv').find('itdOdvName').find('odvNameElem').text
+        station_name = departures_tree.find('itdDepartureMonitorRequest').find('itdOdv').find('itdOdvName').find('odvNameInput').text
         self.app.evaluate_javascript("document.getElementById('"+table+"_time').innerHTML = '"+time+"';")
-        self.app.evaluate_javascript("document.getElementById('"+table+"_name').innerHTML = '"+station_name+"';")
+        self.app.evaluate_javascript("document.getElementById('"+table+"_name').innerHTML = '"+str(station_name.encode("utf-8"))+"';")
 
 
         count = 1
