@@ -44,8 +44,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The idea of Simple Websocket Chat is too give developers a fast and simple starting point for a customer support chat implementation.
-It aims to give insides into a very simple websocket implementation.
+This Project evolved from being a python standalone application to a Node.js version.
+You can still find the standalone build at tag [v1.0](https://github.com/TheNewCivilian/AVV_EFA_Timetable/releases/tag/V1.0).
 
 
 [![A chat window of a client][product-screenshot1]]()
