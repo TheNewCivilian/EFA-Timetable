@@ -4,9 +4,10 @@ table {
 
 body {
     background-color: #cfcfcc;
+    font-family: 'Tomorrow', sans-serif;
 }
 
-.head {
+#head {
     color: #ffffff;
     border-left: solid #ffffff;
     display: block;
@@ -21,31 +22,66 @@ body {
 .entry {
     color: #f19a34;
     background-color: #111;
-    font-size: 25px;
+    font-size: 20px;
     display: table-row;
     vertical-align: inherit;
 }
+.mdi {
+    font-size: 25px;
+}
+
+.mdi-walk {
+    color: #d2ff28;
+}
+
+.mdi-run-fast {
+    color: #b78e28;
+}
+
+.mdi-bike {
+    color: #b75128;
+}
+
+.mdi-cancel {
+    color: #c3423f;
+}
+
 .time {
-    color: #ffffff;
     font-size: 25px;
 }
 
 .station {
-    color: #ffffff;
     font-size: 30px;
     font-weight: bold;
 }
 table {
     margin: 10px;
+    width: 600px;
 }
 
-.depaturemonitor {
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 22px;
+}
+
+.wide{
+    width: 500px;
+}
+
+.departureBoard {
+    margin: 10px;
     background-color: #000;
+    color: #ffffff;
     position: relative;
-    max-width: 600px;
-    margin-left: 50%;
-    margin-top: 20px;
-    left: -300px;
     box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.26),
         0 4px 20px 0 rgba(0, 0, 0, 0.32);
 }
