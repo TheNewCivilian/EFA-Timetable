@@ -91,6 +91,10 @@ git clone https://github.com/TheNewCivilian/AVV_EFA_Timetable
 npm run dev
 ```
 
+3. Check the Timetable
+[https://localhost:8080](https://localhost:8080)
+
+
 <!-- ROADMAP -->
 ## Roadmap
 

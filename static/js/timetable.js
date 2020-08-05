@@ -104,7 +104,7 @@ updateLoop = () => {
   setTimeout(() => {
     renderDepartureData();
     updateLoop();
-  }, 3000)
+  }, 30000)
 }
 
 window.onload = () => {
