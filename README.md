@@ -86,7 +86,12 @@ To get a local copy up and running follow these simple steps.
 git clone https://github.com/TheNewCivilian/AVV_EFA_Timetable
 ```
 
-2. Run the node.js development Server
+2. Install Dependencies
+```sh
+npm install
+```
+
+3. Run the node.js development Server
 ```sh
 npm run dev
 ```
