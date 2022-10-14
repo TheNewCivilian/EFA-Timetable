@@ -8,7 +8,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h3 align="center">EVA Timetable Node.js</h3>
+  <h3 align="center">EFA Timetable Node.js</h3>
 
   <p align="center">
     This node.js application displays EFA (Elektronische Fahrplan Auskunft) content.
@@ -124,16 +124,6 @@ Contributions are what make the open source community such an amazing place to b
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact & Contributors
-
-TheNewCivilian - [https://neuz8t.de](https://neuz8t.de) - private Webpage
-
-Project Link: [https://github.com/TheNewCivilian/AVV_EFA_Timetable](https://github.com/TheNewCivilian/AVV_EFA_Timetable)
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
