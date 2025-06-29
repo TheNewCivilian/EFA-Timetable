@@ -57,7 +57,7 @@ const renderDepartureData = () => {
       const stationNameElement = departureBoardList[index].getElementsByClassName('stationName')[0];
       stationNameElement.innerHTML = departureData.stationName;
       const updateTimeElement = departureBoardList[index].getElementsByClassName('timeStamp')[0];
-      updateTimeElement.innerHTML = departureData.time.substring(departureData.time.length - 8, departureData.time.length - 3);
+      updateTimeElement.innerHTML = departureData.time;
 
       // Add all Departures
       departureData.departures.forEach((departureEntry, entryIndex) => {
